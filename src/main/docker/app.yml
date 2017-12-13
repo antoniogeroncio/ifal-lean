@@ -1,0 +1,14 @@
+version: '2'
+services:
+    apadinhe-app:
+        image: apadinhe
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://apadinhe-postgresql:5432/apadinhe
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    apadinhe-postgresql:
+        extends:
+            file: postgresql.yml
+            service: apadinhe-postgresql

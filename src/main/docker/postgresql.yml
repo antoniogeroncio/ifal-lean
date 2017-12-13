@@ -1,0 +1,11 @@
+version: '2'
+services:
+    apadinhe-postgresql:
+        image: postgres:9.6.2
+        # volumes:
+        #     - ~/volumes/jhipster/apadinhe/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=apadinhe
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
